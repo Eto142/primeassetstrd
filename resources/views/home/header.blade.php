@@ -28,11 +28,11 @@
     </div>
 
     <!-- Risk Banner -->
-    <div class="risk-banner">
+    {{-- <div class="risk-banner">
         <div class="container">
             <strong>Risk Warning:</strong> 73% of retail CFD accounts lose money. CFDs carry high risk due to leverage. Only invest what you can afford to lose.
         </div>
-    </div>
+    </div> --}}
 
     <!-- Header -->
     <header>
