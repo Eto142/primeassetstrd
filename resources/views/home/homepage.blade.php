@@ -223,9 +223,9 @@
                 <div class="col-xl-3 col-md-6 mb-4">
                     <div class="copy-card">
                         <div class="d-flex align-items-center mb-3 gap-3">
-                            <img src="https://i.pravatar.cc/100?img=33" class="trader-img" alt="James Okafor">
+                            <img src="https://i.pravatar.cc/100?img=33" class="trader-img" alt="James Joe">
                             <div>
-                                <div class="trader-name">James Okafor <i class="fas fa-check-circle verified-icon"></i></div>
+                                <div class="trader-name">James Joe <i class="fas fa-check-circle verified-icon"></i></div>
                                 <div style="font-size:0.78rem; color:var(--text-muted);">Commodities</div>
                             </div>
                         </div>
