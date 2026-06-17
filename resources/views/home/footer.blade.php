@@ -1,4 +1,4 @@
-﻿
+
 <footer id="mainFooter" class="footer-main">
     <div class="container-xxl">
         <div class="footer-footnotes">
@@ -151,19 +151,7 @@ Log in</a>
       const appShowcaseSlideElem = $('.app-showcase-navigation-item');
   
       let isAppShowcaseSectionLoaded = false;
-      const loadedAnimationIndexes = new Set();
       
-      const loadAnimationForSlide = (slideIndex) => {
-        if (loadedAnimationIndexes.has(slideIndex)) {
-          return;
-        }
-        const slidePlayer = appShowcaseSliderElem.find(`[data-slick-index='${slideIndex}'] dotlottie-player`);
-        if (slidePlayer.length && slidePlayer.data('animation-path')) {
-          slidePlayer[0].load(slidePlayer.data('animation-path'));
-          loadedAnimationIndexes.add(slideIndex);
-        }
-      };
-  
       const isElementInView = (element, parentContainer) => {
         if (!element || !parentContainer) return false;
         const rect = element.getBoundingClientRect();
@@ -198,43 +186,7 @@ Log in</a>
           lazyLoad: 'progressive',
         });
         
-        loadAnimationForSlide(0);
-        loadAnimationForSlide(1);
-
-        appShowcaseSliderElem.on('beforeChange', (event, slick, currentSlide, nextSlide) => {
-          const currentPlayer = appShowcaseSliderElem.find(`[data-slick-index='${currentSlide}'] dotlottie-player`);
-          if (currentPlayer.length && currentPlayer[0].getLottie()) {
-              currentPlayer[0].stop();
-          }
-          try {
-            loadAnimationForSlide(nextSlide);
-          } catch (e) {
-            console.warn("Unable to preload animation, " + e);
-          }
-        });
-        
-        // This now restarts the animation from the beginning every time.
         appShowcaseSliderElem.on('afterChange', (event, slick, currentSlide) => {
-          const newCurrentPlayerElem = appShowcaseSliderElem.find(`[data-slick-index='${currentSlide}'] dotlottie-player`);
-          
-          if (newCurrentPlayerElem.length) {
-            const player = newCurrentPlayerElem[0];
-
-            const playFromStart = (p) => {
-              p.stop();
-              p.play();
-            };
-
-            // If the Lottie is already loaded, play it from the start.
-            if (player.getLottie()) {
-              playFromStart(player);
-            } else {
-              player.addEventListener('load', () => {
-                playFromStart(player);
-              }, { once: true });
-            }
-          }
-
           appShowcaseNavigation.find(appShowcaseSlideElem).removeClass('active');
           const currentNavItem = appShowcaseNavigation.find(appShowcaseSlideElem).eq(currentSlide);
           currentNavItem.addClass('active');
