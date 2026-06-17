@@ -480,7 +480,7 @@
                     <div class="section-tag text-start"><span>Platform</span></div>
                     <h2 class="section-title text-start mt-2">Professional-Grade Trading Tools</h2>
                     <p style="color:var(--text-muted); margin-bottom:28px; line-height:1.7;">
-                        PrimeAssetsTRD delivers everything a serious trader needs: real-time charts, 50+ technical indicators, 
+                        Tradeway Pro delivers everything a serious trader needs: real-time charts, 50+ technical indicators, 
                         risk management tools, and instant order execution across all devices.
                     </p>
                     <ul class="features-list">
@@ -607,7 +607,7 @@
                         <div class="testimonial-rating">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                         </div>
-                        <p class="testimonial-text">"The platform is intuitive, spreads are tight and withdrawals process within 24 hours. I've used 4 other brokers and PrimeAssetsTRD is by far the most professional."</p>
+                        <p class="testimonial-text">"The platform is intuitive, spreads are tight and withdrawals process within 24 hours. I've used 4 other brokers and Tradeway Pro is by far the most professional."</p>
                         <div class="testimonial-author">
                             <img src="https://i.pravatar.cc/100?img=6" class="testimonial-avatar" alt="Yuki Tanaka">
                             <div>

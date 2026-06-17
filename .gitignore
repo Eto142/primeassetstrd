@@ -22,3 +22,13 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Secret scan artifacts
+.git-secret-check*.txt
+secret-check.txt
+secret_candidates.txt
+suspicious_files.txt
+suspicious_lines.txt
+temp-secret-check.txt
+diff.txt
+files_changed.txt
