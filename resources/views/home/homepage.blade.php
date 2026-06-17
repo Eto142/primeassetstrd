@@ -73,9 +73,8 @@
                         Trade & Copy <span>Top Traders</span> on One Platform
                     </h1>
                     <p class="hero-subtitle">
-                        Access 2,000+ instruments stocks, forex, crypto, indices and commodities. 
-                        Follow and automatically copy elite traders with a single click. 
-                        Join over 24 million registered users globally.
+                        Trade 2,000+ instruments across forex, crypto, stocks, indices, and commodities.
+                        Follow expert traders, automate your strategy, and access a platform built for confident investing.
                     </p>
                     <div class="hero-cta-group">
                         <a href="{{ route('register') }}" class="btn-primary-custom">Open Free Account</a>
@@ -162,8 +161,8 @@
             <div class="section-tag"><span>Copy Trading</span></div>
             <h2 class="section-title">Copy Elite Traders Automatically</h2>
             <p class="section-subtitle">
-                Browse thousands of verified traders with proven track records. 
-                Automatically mirror their trades in real-time â€” no experience needed.
+                Browse thousands of verified traders with proven performance records.
+                Automatically mirror their trades in real time, whether you are new to trading or scaling your portfolio.
             </p>
 
             <div class="row">
@@ -492,7 +491,7 @@
                        
                     </ul>
                     <div class="mt-4">
-                        <a href="{{ route('register') }}" class="btn-primary-custom">Login</a>
+                        <a href="{{ route('register') }}" class="btn-primary-custom">Open Account</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -597,7 +596,7 @@
                             <img src="https://i.pravatar.cc/100?img=5" class="testimonial-avatar" alt="Robert Pope">
                             <div>
                                 <div class="testimonial-name">Robert Pope</div>
-                                <div class="testimonial-location">United Kingdom ðŸ‡¬ðŸ‡§</div>
+                                <div class="testimonial-location">United Kingdom</div>
                             </div>
                         </div>
                     </div>
@@ -612,7 +611,7 @@
                             <img src="https://i.pravatar.cc/100?img=6" class="testimonial-avatar" alt="Yuki Tanaka">
                             <div>
                                 <div class="testimonial-name">Yuki Tanaka</div>
-                                <div class="testimonial-location">Japan ðŸ‡¯ðŸ‡µ</div>
+                                <div class="testimonial-location">Japan</div>
                             </div>
                         </div>
                     </div>
@@ -627,7 +626,7 @@
                             <img src="https://i.pravatar.cc/100?img=7" class="testimonial-avatar" alt="Amara Diallo">
                             <div>
                                 <div class="testimonial-name">Amara Diallo</div>
-                                <div class="testimonial-location">France ðŸ‡«ðŸ‡·</div>
+                                <div class="testimonial-location">France</div>
                             </div>
                         </div>
                     </div>
