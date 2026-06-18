@@ -414,14 +414,14 @@
     
 
     <!-- Add default OpenGraph image tag -->
-<meta property="og:image:secure_url" content="https://cdn.plus500.com/Media/website-instruments-thumbnails/plus500-logo.png" />
-<meta property="og:image" content="https://cdn.plus500.com/Media/website-instruments-thumbnails/plus500-logo.png" />
+<meta property="og:image:secure_url" content="/logo.png" />
+<meta property="og:image" content="/logo.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="400" />
 <meta property="og:image:height" content="400" />
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.plus500.com/Media/website-instruments-thumbnails/plus500-logo.png" />
-<meta name="twitter:image:src" content="https://cdn.plus500.com/Media/website-instruments-thumbnails/plus500-logo.png">
+<meta name="twitter:image" content="/logo.png" />
+<meta name="twitter:image:src" content="/logo.png">
 </head>
 <body class="home regulator-none country-ng lang-en Win10 safari">
 <!-- Google Tag Manager (noscript) -->
@@ -438,7 +438,7 @@
 <nav class="navbar navbar-expand-xxl navbar-light navbar-main">
 		<div class="container-xxl">
 			<div class="navbar-wrapper">
-				<a class="navbar-brand logo" href="/en-ng" aria-label="Primeassetstrade logo/homepage link">
+				<a class="navbar-brand logo" href="/" aria-label="Primeassetstrade logo/homepage link">
 		                <img width="102" height="24" loading="lazy" src="logo1.png" alt="Primeassetstrade logo inside homepage link"/>
 									</a>
 				<div id="offCanvasNavbar" class="offcanvas offcanvas-end offcanvas-main-header" tabindex="-1" aria-labelledby="offCanvasNavbarLabel">
@@ -525,7 +525,7 @@
 								<hr class="dropdown-divider"/>
 							</li>
 							<li role="none" class="nav-item nav-item-extra d-xxl-none">
-								<a role="menuitem" data-analytics="menu_Support" class="nav-link nav-link-extra d-flex align-items-center nav-link-support" href="/en-ng/tradingacademy/faq" aria-label="24/7 Support">
+								<a role="menuitem" data-analytics="menu_Support" class="nav-link nav-link-extra d-flex align-items-center nav-link-support" href="{{url('faqs')}}" aria-label="24/7 Support">
 									<svg class="icon icon-support" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36" fill="none">
 									  <path fill="#E8F5FF" d="M17.532 21.265c-.854 0-1.314-.432-1.314-1.28v-.182c0-1.512.821-2.326 1.938-3.107 1.347-.947 1.987-1.462 1.987-2.51 0-1.146-.887-1.943-2.25-1.943-1.001 0-1.79.498-2.331 1.412l-.263.35c-.296.398-.64.647-1.182.647A1.106 1.106 0 0 1 13 13.506c0-.266.05-.515.131-.781.444-1.462 2.217-2.725 4.894-2.725C20.7 10 23 11.445 23 14.054c0 1.86-1.035 2.775-2.562 3.788-1.05.698-1.576 1.246-1.592 2.11v.183c-.017.631-.51 1.13-1.314 1.13ZM17.499 26c-.92 0-1.724-.731-1.724-1.662 0-.93.788-1.66 1.724-1.66.953 0 1.724.713 1.724 1.66 0 .948-.788 1.662-1.724 1.662Z"/>
 									  <path fill="#E8F5FF" d="M29 18c0-6.073-4.927-11-11-11S7 11.927 7 18s4.927 11 11 11v2c-7.178 0-13-5.823-13-13 0-7.178 5.822-13 13-13 7.177 0 13 5.822 13 13 0 7.177-5.823 13-13 13v-2c6.073 0 11-4.927 11-11Z"/>
@@ -632,7 +632,7 @@
         </div>
     </div>
 </div>
-				<a role="button" data-analytics="menu_support" class="d-flex align-items-center justify-content-center nav-link nav-link-extra nav-link-support" href="/en-ng/tradingacademy/faq" aria-label="24/7 Support" title="24/7 Support">
+				<a role="button" data-analytics="menu_support" class="d-flex align-items-center justify-content-center nav-link nav-link-extra nav-link-support" href="{{url('faqs')}}" aria-label="24/7 Support" title="24/7 Support">
 					<span>
 						<svg class="icon icon-support" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 						  <path d="M21.5 12C21.5 6.75516 17.2448 2.5 12 2.5C6.75516 2.5 2.5 6.75516 2.5 12C2.5 17.2448 6.75516 21.5 12 21.5V23C5.92673 23 1 18.0733 1 12C1 5.92673 5.92673 1 12 1C18.0733 1 23 5.92673 23 12C23 18.0733 18.0733 23 12 23V21.5C17.2448 21.5 21.5 17.2448 21.5 12Z" fill="#E8F5FF"/>
