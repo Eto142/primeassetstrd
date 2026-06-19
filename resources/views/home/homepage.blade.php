@@ -1239,7 +1239,7 @@ Join Primeassetstrade</a>
   });
 </script>
 
-<section class="app-showcase-section general-section " data-section-name="app-showcase-section" data-cta-text="Get the app" data-cta-type="store">
+<section class="app-showcase-section general-section " data-section-name="app-showcase-section" data-cta-text="#" data-cta-type="store">
     <div class="container-xxl">
         <div class="row justify-content-center">
           <div class="col-xxl-9 app-showcase">
@@ -1499,7 +1499,7 @@ Join Primeassetstrade</a>
   });
 </script> 
 
-<section class="app-showcase-section general-section " data-section-name="app-showcase-section" data-cta-text="Get the app" data-cta-type="store">
+<section class="app-showcase-section general-section " data-section-name="app-showcase-section" data-cta-text="#" data-cta-type="store">
     <div class="container-xxl">
         <div class="row justify-content-center">
           <div class="col-xxl-9 app-showcase">
