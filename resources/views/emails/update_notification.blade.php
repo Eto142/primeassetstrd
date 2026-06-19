@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="x-apple-disable-message-reformatting">
-    <title>Swiftmetatrd Notification</title>
+    <title>Primeassettrd Notification</title>
 </head>
 
 <body style="margin:0; padding:0; background:#eef1f7; font-family:Arial, sans-serif;">
@@ -49,7 +49,7 @@
 
                             <p style="margin:30px 0 0; color:#2d3a4b;">
                                 Warm regards,<br>
-                                <strong>Swiftmetatrd Support Team</strong>
+                                <strong>Primeassettrd Support Team</strong>
                             </p>
 
                         </td>
@@ -60,10 +60,10 @@
                         <td align="center"
                             style="background:#f8f9fc; padding:18px 15px; border-top:1px solid #e3e6ef; font-size:12px; color:#7c869b; line-height:1.5;">
 
-                            You are receiving this email as a verified user of Swiftmetatrd.<br>
+                            You are receiving this email as a verified user of Primeassettrd.<br>
                             If this message is not relevant to you, simply ignore it.<br><br>
 
-                            Â© {{ date('Y') }} Swiftmetatrd All Rights Reserved.
+                            Â© {{ date('Y') }} Primeassettrd All Rights Reserved.
                         </td>
                     </tr>
 

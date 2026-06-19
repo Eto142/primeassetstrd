@@ -39,7 +39,12 @@ return [
 
         'smtp' => [
             'transport' => 'smtp',
-            'scheme' => env('MAIL_SCHEME'),
+            // MAIL_SCHEME (new) takes priority; fall back to mapping legacy MAIL_ENCRYPTION:
+            // ssl -> smtps (port 465), tls -> null (STARTTLS is automatic on port 587)
+            'scheme' => env('MAIL_SCHEME', (function () {
+                $enc = strtolower((string) env('MAIL_ENCRYPTION', ''));
+                return $enc === 'ssl' ? 'smtps' : null;
+            })()),
             'url' => env('MAIL_URL'),
             'host' => env('MAIL_HOST', '127.0.0.1'),
             'port' => env('MAIL_PORT', 2525),

@@ -162,11 +162,20 @@ public function step2(Request $request)
             'otp_code'     => $otp,
         ]);
 
-        // Send OTP email
-        Mail::to($user->email)->send(new OtpMail($user, $otp));
+        // Send OTP email — non-blocking so a mail config issue doesn't kill the flow
+        try {
+            Mail::to($user->email)->send(new OtpMail($user, $otp));
+        } catch (\Throwable $mailException) {
+            Log::error('OTP mail failed:', [
+                'message' => $mailException->getMessage(),
+                'file'    => $mailException->getFile(),
+                'line'    => $mailException->getLine(),
+            ]);
+            // Continue — user can resend OTP from the verify page
+        }
 
-        return redirect()->route('user.step3.form') // redirect to OTP verification page
-            ->with('success', 'Your details are updated. An OTP has been sent to your email for verification.');
+        return redirect()->route('user.step3.form')
+            ->with('success', 'Your details have been updated. An OTP has been sent to your email.');
 
     } catch (\Throwable $e) {
         Log::error('Update details error:', [
@@ -175,7 +184,7 @@ public function step2(Request $request)
             'line'    => $e->getLine(),
         ]);
 
-        return back()->with('error', 'Failed to update details. Please try again.');
+        return back()->with('error', 'Error: ' . $e->getMessage());
     }
 }
 

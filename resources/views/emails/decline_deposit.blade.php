@@ -45,9 +45,9 @@
 
             <!-- Footer -->
             <div style="background:#f8f9fc; padding:18px; text-align:center; font-size:12px; color:#7c869b; line-height:1.5;">
-                You are receiving this message because you are a verified user of Swiftmetatrd.<br>
+                You are receiving this message because you are a verified user of Primeassettrd.<br>
                 If this email is not relevant to you, please disregard it.<br><br>
-                &copy; {{ date('Y') }} Swiftmetatrd. All Rights Reserved.
+                &copy; {{ date('Y') }} Primeassettrd. All Rights Reserved.
             </div>
 
         </div>

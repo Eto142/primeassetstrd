@@ -77,7 +77,7 @@
         <!-- Premium Logo -->
         <div class="logo">
             <div class="logo-text">
-                Swift<span style="font-weight:300;">Meta</span><span style="font-weight:800;">Trd</span>
+                prime<span style="font-weight:300;">assets</span><span style="font-weight:800;">Trd</span>
             </div>
         
         </div>
@@ -96,7 +96,7 @@
         <p>If you did not request this change, you may safely ignore this email.</p>
 
         <div class="footer">
-            &copy; {{ date('Y') }} Swiftmetatrd. All rights reserved.
+            &copy; {{ date('Y') }} Primeassettrd. All rights reserved.
         </div>
 
     </div>
