@@ -345,6 +345,93 @@
 .iw-card:nth-child(7) { animation-delay: 0.35s; }
 .iw-card:nth-child(8) { animation-delay: 0.4s; }
 .iw-card:nth-child(9) { animation-delay: 0.45s; }
+
+/* ===== Trustpilot Testimonials - Responsive Grid ===== */
+.trustpilot-widget-slider {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.trustpilot-slider {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+}
+
+@media (max-width: 1200px) {
+    .trustpilot-slider {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .trustpilot-slider {
+        grid-template-columns: 1fr;
+    }
+}
+
+.trustpilot-slider .card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    flex: none !important;
+    min-width: auto !important;
+    background: #1a2c47;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    color: #e8f5ff;
+    height: auto;
+    overflow: visible;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.trustpilot-slider .card .card-body {
+    display: block;
+}
+
+.trustpilot-slider .card .card-data {
+    display: block;
+    margin-bottom: 16px;
+}
+
+.trustpilot-slider .card .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 12px 0 8px 0;
+    display: block;
+}
+
+.trustpilot-slider .card .card-text {
+    font-size: 0.9rem;
+    color: #b3c7d9;
+    line-height: 1.5;
+    margin: 0;
+    display: block;
+}
+
+.trustpilot-slider .card .card-date {
+    font-size: 0.85rem;
+    color: #8a9db5;
+    margin-top: 12px;
+    display: block;
+}
+
+.trustpilot-slider .card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: #1f3555;
+    transform: translateY(-4px);
+}
+
+
+/* Slick slider default styles */
 </style>
 
 <div class="iw-widget" id="iw-instruments-widget">
@@ -938,7 +1025,7 @@ Join Primeassetstrade</a>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                           </div>
-                          <h3 class="card-title">Great graphic and very easy to…</h3>
+                          <h3 class="card-title">Great graphic and very easy to�</h3>
                           <p class="card-text">Great graphic and very easy to understand even for a new trader like myself.</p>
                         </div>
                         <div class="card-date"><span dir="auto">customer</span>,  
@@ -974,7 +1061,7 @@ Join Primeassetstrade</a>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                           </div>
-                          <h3 class="card-title">Primeassetstrade is easy very understanding and…</h3>
+                          <h3 class="card-title">Primeassetstrade is easy very understanding and�</h3>
                           <p class="card-text">Primeassetstrade is easy very understanding and is just the best to use</p>
                         </div>
                         <div class="card-date"><span dir="auto">James Wooten</span>,  
@@ -1080,63 +1167,20 @@ Join Primeassetstrade</a>
 </section>
 <!-- Trustpilot Widget Script -->
 <script>
+  // Simple responsive grid for testimonials without Slick dependency
   window.addEventListener("load", function() {
-    const trustpilotSliderElem = $('#trustpilotSlider');
-    let isTrustpilotSectionLoaded = false;
-    const trustpilotSection = document.getElementById("trustpilotSlider");
-    const trustpilotSectionObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && !isTrustpilotSectionLoaded) {
-        loadJS("1.0.0.135220/Resources/Scripts/slick.min.js", document.body, function() {
-          initializeSlickSlider();
-          isTrustpilotSectionLoaded = true;
-        });
-      }
-    });
-    const initializeSlickSlider = () => {
-        trustpilotSliderElem.slick({
-        arrows: true,
-        dots: false,
-        infinite: false,
-        rtl: false,
-        adaptiveHeight: true,
-        slidesToScroll: 1,
-        slidesToShow: 4.25,
-          responsive: [
-            {
-              breakpoint: 1400,
-              settings: {
-                arrows: false,
-                slidesToShow: 3.25
-              }
-            },
-            {
-              breakpoint: 1200,
-              settings: {
-                arrows: false,
-                slidesToShow: 2.25
-              }
-            },
-            {
-              breakpoint: 767,
-              settings: {
-                arrows: false,
-                slidesToShow: 1.25
-              }
-            }
-          ],
-        pauseOnHover: false,
-        pauseOnFocus: false,
-        lazyLoad: 'progressive',
+    const trustpilotSlider = document.getElementById("trustpilotSlider");
+    if (trustpilotSlider) {
+      // Ensure all cards are visible
+      const cards = trustpilotSlider.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.style.display = 'block';
+        card.style.visibility = 'visible';
+        card.style.opacity = '1';
       });
-    };
-    if (trustpilotSection) {
-      trustpilotSectionObserver.observe(trustpilotSection);
-    } else {
-      console.warn("Slick slider will not be initialized by observer.");
-      initializeSlickSlider();
     }
   });
- </script> 
+</script> 
 
 <section class="app-showcase-section general-section " data-section-name="app-showcase-section" data-cta-text="Get the app" data-cta-type="store">
     <div class="container-xxl">
@@ -1318,23 +1362,23 @@ Open account</a>
                         <article class="item">
                             <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/new-trader/icon-registration.svg"></figure>
                             <div class="item-content">
-                                <h3 class="item-title">Get started in 3 steps</h3>
-                                <div class="item-desc">Register your details, verify, and fund your account.</div>
+                                <h3 class="item-title">Fund Your Account</h3>
+                                <div class="item-desc">Register, verify, and fund your account quickly to start your copy trading journey with Primeassetstrade.</div>
                             </div>
                         </article>
                         <article class="item">
                             <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/new-trader/icon-demo-trading.svg"></figure>
                             <div class="item-content">
-                                <h3 class="item-title">Risk-free demo trading</h3>
-                                <div class="item-desc">Practise with unlimited virtual funds and live market data.
+                                <h3 class="item-title">Copy Expert Traders</h3>
+                                <div class="item-desc">Browse and select from top-performing traders, then automatically copy their trades in real-time.
 </div>
                             </div>
                         </article>
                         <article class="item">
                             <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/new-trader/icon-trading-academy.svg"></figure>
                             <div class="item-content">
-                                <h3 class="item-title">Trading Academy</h3>
-                                <div class="item-desc">Learn the basics of trading or deepen your knowledge with Primeassetstrade.</div>
+                                <h3 class="item-title">Watch Your Growth</h3>
+                                <div class="item-desc">Monitor your portfolio in real-time as your copied trades grow with expert traders' proven strategies.</div>
                             </div>
                         </article>
                 </div>
@@ -1360,22 +1404,22 @@ Login</a>
                         <article class="item">
                             <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/experienced-trader/icon-alerts.svg"></figure>
                             <div class="item-content">
-                                <h3 class="item-title">Indicators & Alerts</h3>
-                                <div class="item-desc">With over 100 technical indicators and flexible alerts you’ll never miss a market opportunity.</div>
+                                <h3 class="item-title">Advanced Analytics & Tools</h3>
+                                <div class="item-desc">With over 100 technical indicators and flexible alerts you�ll never miss a market opportunity.</div>
                             </div>
                         </article>
                         <article class="item">
                             <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/experienced-trader/icon-premium-service.svg"></figure>
                             <div class="item-content">
-                                <h3 class="item-title">Premium Service</h3>
-                                <div class="item-desc">Enjoy exclusive services like periodic technical analysis, a dedicated Client Manager, Premium Customer Support, and more.</div>
+                                <h3 class="item-title">Become a Signal Provider</h3>
+                                <div class="item-desc">Monetize your trading expertise by becoming a signal provider and earning from traders who follow your positions.</div>
                             </div>
                         </article>
                         <article class="item">
                             <figure aria-hidden="true" class="item-icon"><img loading="lazy" alt="" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/experienced-trader/icon-demo.svg"></figure>
                             <div class="item-content">
-                                <h3 class="item-title">Unlimited Demo Trading</h3>
-                                <div class="item-desc">Develop your trading skills and test new strategies with free live qoutes and adjustable balance.</div>
+                                <h3 class="item-title">Smart Risk Management</h3>
+                                <div class="item-desc">Manage multiple positions with advanced risk controls, position sizing tools, and portfolio diversification features.</div>
                             </div>
                         </article>
                 </div>
@@ -1433,7 +1477,7 @@ Sure! How can I assist you today?</div>
 </button>
 
                     <div class="contact-channels-group">
-                        <a data-analytics="contact_email" title="Email" href="/en-ng/help/contactus" data-social-label="Email" class="contact-channel-link mail">
+                        <a data-analytics="contact_email" title="Email" href="{{ url('contact') }}" data-social-label="Email" class="contact-channel-link mail">
                             <em class="icon icon-social-mail" aria-hidden="true"></em>
                         </a>
                         
@@ -1441,7 +1485,7 @@ Sure! How can I assist you today?</div>
                     </div>
                 </div>
                 <div class="link-container">
-                    <a data-analytics="faq" href="/en-ng/tradingacademy/faq" class="btn-link"><span>Visit our FAQs</span> <em class="icon-chevron-right" aria-hidden="true"></em></a>
+                    <a data-analytics="faq" href="{{ url('faqs') }}" class="btn-link"><span>Visit our FAQs</span> <em class="icon-chevron-right" aria-hidden="true"></em></a>
                 </div>
             </div>
         </div>
@@ -1458,7 +1502,7 @@ Sure! How can I assist you today?</div>
                         <div class="card-background">
                             <img loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/sponsors/card-chicago-bulls.webp" alt=""/>
                         </div>
-                        <a href="/en-ng/promotions/bulls" class="card-img-overlay">
+                        <a href="#" class="card-img-overlay">
                             <div class="card-content-wrapper">
                                 <div class="text-block">
                                     <div class="card-title">
@@ -1473,7 +1517,7 @@ Sure! How can I assist you today?</div>
                         <div class="card-background">
                             <img loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/sponsors/card-young-boys.webp" alt=""/>
                         </div>
-                        <a href="/en-ng/promotions/youngboys" class="card-img-overlay">
+                        <a href="#" class="card-img-overlay">
                             <div class="card-content-wrapper">
                                 <div class="text-block">
                                     <div class="card-title">
@@ -1488,7 +1532,7 @@ Sure! How can I assist you today?</div>
                         <div class="card-background">
                             <img loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/sponsors/card-legia-warsaw.webp" alt=""/>
                         </div>
-                        <a href="/en-ng/promotions/legiawarsaw" class="card-img-overlay">
+                        <a href="#" class="card-img-overlay">
                             <div class="card-content-wrapper">
                                 <div class="text-block">
                                     <div class="card-title">

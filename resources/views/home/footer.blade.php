@@ -2,12 +2,10 @@
 <footer id="mainFooter" class="footer-main">
     <div class="container-xxl">
         <div class="footer-footnotes">
-    <div class="footer-footnotes-item">This website is operated by InvestSoft.</div>
+   
+
 <div class="footer-footnotes-item">
-<sup>1</sup>For 2024-2025,Primeassetstrade received nominations from <a href="https://www.fxempire.com/brokers/best/mobile-apps"target="_blank">FXEmpire</a>, <a href="https://uk.advfn.com/awards/2025"target="_blank">ADVFN</a>, <a href="https://www.singsaver.com.sg/investments/cfd"target="_blank">SingSaver</a> and <a href="https://www.forexbrokers.com/annual-awards-2025"target="_blank">ForexBrokers</a>. Illustrative figures shown on platform screens.
-</div>
-<div class="footer-footnotes-item">
-<sup>2</sup>Market price and trader sentiment reflect current market state. Mini chart represents the last 30 days of market data. 
+<sup></sup>Market price and trader sentiment reflect current market state. Mini chart represents the last 30 days of market data. 
 </div>
 </div>
 <hr class="footer-divider">
@@ -24,42 +22,7 @@
             <div class="col-md-6">
                 <div class="footer-social-networks">
                     <ul class="menu social-menu">
-        <li>
-            <a data-analytics="social" href="https://www.facebook.com/Plus500" title="Facebook" target="_blank" rel="noopener noreferrer">
-                <img width="44" height="44" loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/social-networks/social-network-facebook-icon.svg" alt="" class="social-icon-facebook"/>
-                <span class="visually-hidden">Facebook</span>
-            </a>
-        </li>
-        <li>
-            <a data-analytics="social" href="https://www.twitter.com/plus500" title="Twitter" target="_blank" rel="noopener noreferrer">
-                <img width="44" height="44" loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/social-networks/social-network-twitter-icon.svg" alt="" class="social-icon-twitter"/>
-                <span class="visually-hidden">Twitter</span>
-            </a>
-        </li>
-        <li>
-            <a data-analytics="social" href="https://www.instagram.com/plus500/" title="Instagram" target="_blank" rel="noopener noreferrer">
-                <img width="44" height="44" loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/social-networks/social-network-instagram-icon.svg" alt="" class="social-icon-instagram"/>
-                <span class="visually-hidden">Instagram</span>
-            </a>
-        </li>
-        <li>
-            <a data-analytics="social" href="http://www.linkedin.com/company/plus500-official-page" title="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <img width="44" height="44" loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/social-networks/social-network-linkedin-icon.svg" alt="" class="social-icon-linkedin"/>
-                <span class="visually-hidden">LinkedIn</span>
-            </a>
-        </li>
-        <li>
-            <a data-analytics="social" href="https://www.youtube.com/user/Plus500Site" title="YouTube" target="_blank" rel="noopener noreferrer">
-                <img width="44" height="44" loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/social-networks/social-network-youtube-icon.svg" alt="" class="social-icon-youtube"/>
-                <span class="visually-hidden">YouTube</span>
-            </a>
-        </li>
-        <li>
-            <a data-analytics="social" href="https://t.me/Plus500_Official" title="Telegram" target="_blank" rel="noopener noreferrer">
-                <img width="44" height="44" loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/social-networks/social-network-telegram-icon.svg" alt="" class="social-icon-telegram"/>
-                <span class="visually-hidden">Telegram</span>
-            </a>
-        </li>
+      
 </ul>
                 </div>
                 <div class="footer-app-stores">
@@ -73,15 +36,14 @@
         <div class="footer-main-content">
                         <div class="footer-item footer-text">
                 
-                    <p>Remember that CFDs are a leveraged product and can result in the loss of your entire capital. Trading CFDs may not be suitable for you.  Please ensure you fully understand the risks involved.
-</p>
+                    <p>Join thousands of successful traders on Primeassetstrade. Trade with confidence using advanced tools, real-time analytics, and proven copy trading strategies. Your success is our priority with 24/7 dedicated support.</p>
                 
                             </div>
             <div class="footer-item footer-text">
-                <p>Price info is delayed. Get real-time prices on the platform by opening an account.</p>
+                <p>Get real-time market data, live quotes, and instant trade execution on the platform. Copy trades execute automatically when your selected traders open positions.</p>
             </div>
                 <div class="footer-item footer-text">
-                    <p>Primeassetstrade is mainly compensated for its services through the Bid/Ask spread.</p>
+                    <p>Primeassetstrade generates revenue through trading commissions, copy trading fees, and spreads on executed trades. Signal providers earn a share of copy trading fees from followers.</p>
                 </div>
                         <div class="footer-item footer-text">
                     <p>Primeassetstrade is a trademark of Primeassetstrade Ltd.

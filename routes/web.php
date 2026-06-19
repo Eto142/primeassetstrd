@@ -36,6 +36,102 @@ Route::get('/trade', function () {
     return view('home.trade');
 });
 
+// Market Pages Routes
+Route::get('/en-ng/trading/cryptocurrencies', function () {
+    return view('home.markets.crypto');
+});
+
+Route::get('/en-ng/trading/indices', function () {
+    return view('home.markets.indices');
+});
+
+Route::get('/en-ng/trading/forex', function () {
+    return view('home.markets.forex');
+});
+
+Route::get('/en-ng/trading/commodities', function () {
+    return view('home.markets.commodities');
+});
+
+Route::get('/en-ng/trading/stocks', function () {
+    return view('home.markets.shares');
+});
+
+Route::get('/en-ng/trading/options', function () {
+    return view('home.markets.options');
+});
+
+Route::get('/en-ng/trading/etfs', function () {
+    return view('home.markets.etfs');
+});
+
+Route::get('/en-ng/instruments', function () {
+    return view('home.markets.all-markets');
+});
+
+// Trading Pages Routes
+Route::get('/en-ng/help/feescharges', function () {
+    return view('home.trading.feescharges');
+});
+
+Route::get('/en-ng/trading/esg', function () {
+    return view('home.trading.esg');
+});
+
+// Company Pages Routes
+Route::get('/en-ng/aboutus', function () {
+    return view('home.company.aboutus');
+});
+
+Route::get('/en-ng/aboutus/reviews', function () {
+    return view('home.company.reviews');
+});
+
+Route::get('/en-ng/promotions/bulls', function () {
+    return view('home.company.bulls');
+});
+
+Route::get('/en-ng/promotions/legiawarsaw', function () {
+    return view('home.company.legiawarsaw');
+});
+
+Route::get('/en-ng/promotions/youngboys', function () {
+    return view('home.company.youngboys');
+});
+
+// Learn Pages Routes
+Route::get('/en-ng/tradingacademy', function () {
+    return view('home.learn.tradingacademy');
+});
+
+Route::get('/en-ng/glossary', function () {
+    return view('home.learn.glossary');
+});
+
+Route::get('/en-ng/forecasts', function () {
+    return view('home.learn.forecasts');
+});
+
+Route::get('/en-ng/demo-account', function () {
+    return view('home.learn.demo-account');
+});
+
+Route::get('/en-ng/insights', function () {
+    return view('home.learn.insights');
+});
+
+Route::get('/en-ng/economiccalendar', function () {
+    return view('home.learn.economiccalendar');
+});
+
+Route::get('/en-ng/tradingacademy/riskmanagement', function () {
+    return view('home.learn.riskmanagement');
+});
+
+Route::get('/en-ng/help/alerts', function () {
+    return view('home.learn.alerts');
+});
+
 
 
 // Registration Routes

@@ -316,8 +316,8 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3 class="contact-title">EMAIL ADDRESS</h3>
-                        <p class="contact-detail green">support@tradewaybroker.com</p>
-                        <p class="contact-detail green">info@tradewaybroker.com</p>
+                        <p class="contact-detail green">support@primeassetstrd.com</p>
+                        <p class="contact-detail green">info@primeassetstrd.com</p>
                     </div>
                     
                     {{-- <div class="contact-info-card">

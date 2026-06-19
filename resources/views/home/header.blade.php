@@ -342,7 +342,7 @@
     }
 </script>
     
-<link rel="alternate" href="https://www.plus500.com/" hreflang="x-default" />
+{{-- <link rel="alternate" href="https://www.plus500.com/" hreflang="x-default" />
 <link rel="alternate" href="https://www.plus500.com/cs/" hreflang="cs-CZ" />
 <link rel="alternate" href="https://www.plus500.com/en-cz/" hreflang="en-CZ" />
 <link rel="alternate" href="https://www.plus500.com/nl/" hreflang="nl-NL" />
@@ -410,7 +410,7 @@
 <link rel="alternate" href="https://www.plus500.com/en-id/" hreflang="en-ID" />
 <link rel="alternate" href="https://jp.plus500.com/" hreflang="ja" />
 
-    
+     --}}
     
 
     <!-- Add default OpenGraph image tag -->
