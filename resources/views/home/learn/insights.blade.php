@@ -1,24 +1,20 @@
+@php
+$pageTitle = '+Insights | Market Data & Trading Insights';
+$pageHead = <<<'PAGEHEAD'
+<style>
+    :root { --primary: #1652f0; --secondary: #f58634; }
+    body { font-family: 'Raleway', sans-serif; background-color: #ffffff; color: #0f1c3f; }
+    .page-hero { background: linear-gradient(rgba(22, 82, 240, 0.85), rgba(245, 134, 52, 0.85)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover; padding: 120px 0; color: white; text-align: center; }
+    .page-hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; }
+    .page-content { padding: 80px 0; }
+    .insight-card { background: #f5f7fc; padding: 30px; border-radius: 15px; margin-bottom: 25px; }
+    .insight-card h5 { color: #1652f0; margin-bottom: 15px; }
+    .cta-section { background: linear-gradient(135deg, #1652f0 0%, #f58634 100%); color: white; padding: 60px 0; text-align: center; }
+</style>
+PAGEHEAD;
+@endphp
+
 @include('home.header')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>+Insights | Market Data & Trading Insights</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root { --primary: #1652f0; --secondary: #f58634; }
-        body { font-family: 'Raleway', sans-serif; background-color: #ffffff; color: #0f1c3f; }
-        .page-hero { background: linear-gradient(rgba(22, 82, 240, 0.85), rgba(245, 134, 52, 0.85)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover; padding: 120px 0; color: white; text-align: center; }
-        .page-hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; }
-        .page-content { padding: 80px 0; }
-        .insight-card { background: #f5f7fc; padding: 30px; border-radius: 15px; margin-bottom: 25px; }
-        .insight-card h5 { color: #1652f0; margin-bottom: 15px; }
-        .cta-section { background: linear-gradient(135deg, #1652f0 0%, #f58634 100%); color: white; padding: 60px 0; text-align: center; }
-    </style>
-</head>
-<body>
 <div class="page-hero">
     <div class="container">
         <h1>+Insights</h1>

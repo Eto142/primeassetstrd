@@ -1,10 +1,9 @@
-@include('home.header')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+@php
+$pageTitle = 'Primeassetstrade - Official Partner Chicago Bulls';
+$pageHead = <<<'PAGEHEAD'
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primeassetstrade - Official Partner Chicago Bulls</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -16,8 +15,11 @@
         .sponsorship-info { background: #f5f7fc; padding: 40px; border-radius: 15px; margin: 30px 0; }
         .cta-section { background: linear-gradient(135deg, #1652f0 0%, #f58634 100%); color: white; padding: 60px 0; text-align: center; }
     </style>
-</head>
-<body>
+PAGEHEAD;
+@endphp
+
+@include('home.header')
+
 <div class="page-hero">
     <div class="container">
         <h1>Primeassetstrade & Chicago Bulls</h1>
@@ -61,5 +63,3 @@
 </div>
 
 @include('home.footer')
-</body>
-</html>

@@ -7,7 +7,11 @@
         <meta name="referrer" content="unsafe-url">
     <meta name="google-site-verification" id="MetaWebMasterVerify" content="_BKCt60JDbUv1dQdr9-kaJrA5D_4s7gLqAS7d8OpKsw" />
         <meta name="robots" content="noindex, nofollow" />
-    <title>Online CFD Trading | Trading the Markets | Primeassetstrade</title>
+    @if(!empty($pageTitle))
+        <title>{{ $pageTitle }}</title>
+    @else
+        <title>Online CFD Trading | Trading the Markets | Primeassetstrade</title>
+    @endif
         <meta name="description" content="Trade the world’s most popular markets with a leading-CFD provider: CFDs on Forex, Cryptocurrencies, Shares, Commodities, Indices, ETFs &amp; Options." />
     
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
@@ -26,7 +30,12 @@
     <link rel="preload" fetchpriority="high" as="image" href="Media/Resources/MainSite/Images/hero/hero-dark-bg.webp"/>
 
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="Resources/CSS/main/home-new-layout.css"/>
+    @isset($pageHead)
+        {!! $pageHead !!}
+    @endisset
 
     
 
@@ -102,7 +111,7 @@
             const cookiePolicyContentElem = document.querySelector("#onetrust-policy-text");
             if(cookiePolicyContentElem){
                 const cookiePolicyLink = document.createElement("a");
-                cookiePolicyLink.href = "/en-ng/help/cookiepolicy?productType=CFD";
+                cookiePolicyLink.href = "/help/cookiepolicy";
                 cookiePolicyLink.textContent = "Cookie Policy";
                 cookiePolicyLink.setAttribute("data-analytics", "cookies");
                 cookiePolicyLink.setAttribute("aria-label", cookiePolicyLink.textContent);
@@ -251,7 +260,7 @@
 
                 const localPath = "";
                 const page = localPath || 'Home';
-                const url = '/en-ng/utils/processvisit' + '?visitPage=' + encodeURIComponent(page);
+                const url = '/utils/processvisit' + '?visitPage=' + encodeURIComponent(page);
                 
                 fetch(url, {
                     method: 'GET',
@@ -460,14 +469,14 @@
 					                </a>
 									<ul role="menu" id="marketsSubmenu" class="collapse" aria-labelledby="marketsSubmenuButton" data-menu-name="markets">
 													<li role="none" class="nav-item nav-header"><span class="dropdown-header">CFDs</span></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/trading/cryptocurrencies" aria-label="Buy & Sell Cryptocurrency CFDs | Crypto CFD Trading" role="menuitem" data-page="CryptoCurrencies" data-analytics="menuClick">Crypto</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/trading/indices" aria-label="Buy & Sell Index CFDs | Indices CFD Trading" role="menuitem" data-page="Indices" data-analytics="menuClick">Indices</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/trading/forex" aria-label="Buy & Sell Forex CFDs | Forex CFD Trading" role="menuitem" data-page="Forex" data-analytics="menuClick">Forex</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/trading/commodities" aria-label="Buy & Sell Commodity CFDs | Commodities CFD Trading" role="menuitem" data-page="Commodities" data-analytics="menuClick">Commodities</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/trading/stocks" aria-label="Buy & Sell Share CFDs | Stocks CFD Trading" role="menuitem" data-page="Stocks" data-analytics="menuClick">Shares</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/trading/options" aria-label="Buy & Sell Options CFDs | Options CFD Trading" role="menuitem" data-page="Options" data-analytics="menuClick">Options</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/trading/etfs" aria-label="Buy & Sell ETF CFDs | ETFs CFD Trading" role="menuitem" data-page="ETFs" data-analytics="menuClick">ETFs</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/instruments" aria-label="All Major Markets: CFDs on Stocks, FX & More" role="menuitem" data-page="AllInstruments" data-analytics="menuClick">All Markets</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('markets.crypto') }}" aria-label="Buy & Sell Cryptocurrency CFDs | Crypto CFD Trading" role="menuitem" data-page="CryptoCurrencies" data-analytics="menuClick">Crypto</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('markets.indices') }}" aria-label="Buy & Sell Index CFDs | Indices CFD Trading" role="menuitem" data-page="Indices" data-analytics="menuClick">Indices</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('markets.forex') }}" aria-label="Buy & Sell Forex CFDs | Forex CFD Trading" role="menuitem" data-page="Forex" data-analytics="menuClick">Forex</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('markets.commodities') }}" aria-label="Buy & Sell Commodity CFDs | Commodities CFD Trading" role="menuitem" data-page="Commodities" data-analytics="menuClick">Commodities</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('markets.shares') }}" aria-label="Buy & Sell Share CFDs | Stocks CFD Trading" role="menuitem" data-page="Stocks" data-analytics="menuClick">Shares</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('markets.options') }}" aria-label="Buy & Sell Options CFDs | Options CFD Trading" role="menuitem" data-page="Options" data-analytics="menuClick">Options</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('markets.etfs') }}" aria-label="Buy & Sell ETF CFDs | ETFs CFD Trading" role="menuitem" data-page="ETFs" data-analytics="menuClick">ETFs</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('markets.all') }}" aria-label="All Major Markets: CFDs on Stocks, FX & More" role="menuitem" data-page="AllInstruments" data-analytics="menuClick">All Markets</a></li>
 									</ul>
 								</li>
 															<li role="none" class="nav-item">
@@ -478,8 +487,8 @@
 										</span>
 					                </a>
 									<ul role="menu" id="tradingSubMenu" class="collapse" aria-labelledby="tradingSubMenuButton" data-menu-name="trading">
-												<li  role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/help/feescharges?productType=CFD" aria-label="Fees & Charges | CFD Trading" role="menuitem" data-page="FeesCharges" data-analytics="menuClick">Fees & Charges</a></li>
-												<li  role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/trading/esg" aria-label="ESG Scoring" role="menuitem" data-page="Esg" data-analytics="menuClick">ESG</a></li>
+												<li  role="none" class="nav-item"><a class="dropdown-item" href="{{ route('trading.feescharges', ['productType' => 'CFD']) }}" aria-label="Fees & Charges | CFD Trading" role="menuitem" data-page="FeesCharges" data-analytics="menuClick">Fees & Charges</a></li>
+												<li  role="none" class="nav-item"><a class="dropdown-item" href="{{ route('trading.esg') }}" aria-label="ESG Scoring" role="menuitem" data-page="Esg" data-analytics="menuClick">ESG</a></li>
 									</ul>
 								</li>
 															<li role="none" class="nav-item">
@@ -490,16 +499,16 @@
 										</span>
 					                </a>
 									<ul role="menu" id="companySubMenu" class="collapse" aria-labelledby="companySubmenuButton" data-menu-name="company">
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/aboutus" aria-label="AboutPrimeassetstrade: What IsPrimeassetstrade?" role="menuitem" data-page="AboutUs" data-analytics="menuClick">About Us</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/aboutus/reviews" aria-label="Is Primeassetstrade a Scam? Reviews from real traders" role="menuitem" data-page="Reviews" data-analytics="menuClick">Primeassetstrade Reviews</a></li>
+									<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('company.aboutus') }}" aria-label="AboutPrimeassetstrade: What IsPrimeassetstrade?" role="menuitem" data-page="AboutUs" data-analytics="menuClick">About Us</a></li>
+									<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('company.reviews') }}" aria-label="Is Primeassetstrade a Scam? Reviews from real traders" role="menuitem" data-page="Reviews" data-analytics="menuClick">Primeassetstrade Reviews</a></li>
 													<li role="none" class="nav-item"><a class="dropdown-item" href="https://www.500affiliates.com/" aria-label="Affiliates" role="menuitem" target="_blank"rel="noopener noreferrer"data-analytics="menuClick">Affiliates</a></li>
 													<li role="none" class="nav-item"><a class="dropdown-item" href="https://investors.plus500.com/" aria-label="Investor Relations" role="menuitem" target="_blank"rel="noopener noreferrer"data-analytics="menuClick">Investor Relations</a></li>
 													<li role="none" class="nav-item nav-item-doc"><a class="dropdown-item" href="" aria-label="Privacy and Cookie Policy" role="menuitem" target="_blank"rel="noopener noreferrer"doc-href=""data-analytics="menuClick">Cookies and Privacy</a></li>
 													<li role="none" class="nav-item pt-3"></li>
 														<li role="none" class="nav-item"><span class="dropdown-header">Sponsorships</span></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/promotions/bulls" aria-label="Sponsor of the Chicago Bulls" role="menuitem" data-page="Bulls" data-analytics="menuClick">Chicago Bulls</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/promotions/legiawarsaw" aria-label="Main Sponsor of Legia Warsaw" role="menuitem" data-page="LegiaWarsaw" data-analytics="menuClick">Legia Warsaw</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/promotions/youngboys" aria-label="Main Sponsor of BSC Young Boys" role="menuitem" data-page="YoungBoys" data-analytics="menuClick">BSC Young Boys</a></li>
+									<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('company.bulls') }}" aria-label="Sponsor of the Chicago Bulls" role="menuitem" data-page="Bulls" data-analytics="menuClick">Chicago Bulls</a></li>
+									<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('company.legiawarsaw') }}" aria-label="Main Sponsor of Legia Warsaw" role="menuitem" data-page="LegiaWarsaw" data-analytics="menuClick">Legia Warsaw</a></li>
+									<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('company.youngboys') }}" aria-label="Main Sponsor of BSC Young Boys" role="menuitem" data-page="YoungBoys" data-analytics="menuClick">BSC Young Boys</a></li>
 									</ul>
 								</li>
 															<li role="none" class="nav-item">
@@ -510,15 +519,15 @@
 										</span>
 					                </a>
 									<ul role="menu" id="learnSubMenu" class="collapse" aria-labelledby="learnSubmenuButton" data-menu-name="learn">
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/tradingacademy" aria-label="Trading Academy - Learn Trading Online" role="menuitem" data-page="TradingAcademy" data-analytics="menuClick">Trading Academy</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/glossary" aria-label="Financial Glossary: Trading Terms & Definitions" role="menuitem" data-page="Glossary" data-analytics="menuClick">Glossary</a></li>
+									<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('learn.tradingacademy') }}" aria-label="Trading Academy - Learn Trading Online" role="menuitem" data-page="TradingAcademy" data-analytics="menuClick">Trading Academy</a></li>
+									<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('learn.glossary') }}" aria-label="Financial Glossary: Trading Terms & Definitions" role="menuitem" data-page="Glossary" data-analytics="menuClick">Glossary</a></li>
 													<li role="none" class="nav-item"></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/forecasts" aria-label="Trading Forecasts and Price Outlook" role="menuitem" data-page="Forecasts" data-analytics="menuClick">Forecasts</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/demo-account" aria-label="Free Demo Trading Simulator" role="menuitem" data-page="DemoAccount" data-analytics="menuClick">Demo Trading</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/insights" aria-label="Trading Data From +Insights" role="menuitem" data-page="Insights" data-analytics="menuClick">+Insights</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/economiccalendar" aria-label="Economic Calendar | Financial Events" role="menuitem" data-page="EconomicCalendar" data-analytics="menuClick">Economic Calendar</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/tradingacademy/riskmanagement" aria-label="Risk Management Tools | CFD Trading" role="menuitem" data-page="RiskManagement" data-analytics="menuClick">Risk Management</a></li>
-													<li role="none" class="nav-item"><a class="dropdown-item" href="/en-ng/help/alerts" aria-label="Real Time Alerts | Trading Alerts" role="menuitem" data-page="Alerts" data-analytics="menuClick">Alerts</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('learn.forecasts') }}" aria-label="Trading Forecasts and Price Outlook" role="menuitem" data-page="Forecasts" data-analytics="menuClick">Forecasts</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('learn.demoAccount') }}" aria-label="Free Demo Trading Simulator" role="menuitem" data-page="DemoAccount" data-analytics="menuClick">Demo Trading</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('learn.insights') }}" aria-label="Trading Data From +Insights" role="menuitem" data-page="Insights" data-analytics="menuClick">+Insights</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('learn.economiccalendar') }}" aria-label="Economic Calendar | Financial Events" role="menuitem" data-page="EconomicCalendar" data-analytics="menuClick">Economic Calendar</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('learn.riskmanagement') }}" aria-label="Risk Management Tools | CFD Trading" role="menuitem" data-page="RiskManagement" data-analytics="menuClick">Risk Management</a></li>
+													<li role="none" class="nav-item"><a class="dropdown-item" href="{{ route('learn.alerts') }}" aria-label="Real Time Alerts | Trading Alerts" role="menuitem" data-page="Alerts" data-analytics="menuClick">Alerts</a></li>
 									</ul>
 								</li>
 																					<li role="none" class="d-xxl-none">

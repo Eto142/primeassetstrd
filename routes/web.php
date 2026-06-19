@@ -37,108 +37,106 @@ Route::get('/trade', function () {
 });
 
 // Market Pages Routes
-Route::get('/en-ng/trading/cryptocurrencies', function () {
+Route::get('/trading/cryptocurrencies', function () {
     return view('home.markets.crypto');
-});
+})->name('markets.crypto');
 
-Route::get('/en-ng/trading/indices', function () {
+Route::get('/trading/indices', function () {
     return view('home.markets.indices');
-});
+})->name('markets.indices');
 
-Route::get('/en-ng/trading/forex', function () {
+Route::get('/trading/forex', function () {
     return view('home.markets.forex');
-});
+})->name('markets.forex');
 
-Route::get('/en-ng/trading/commodities', function () {
+Route::get('/trading/commodities', function () {
     return view('home.markets.commodities');
-});
+})->name('markets.commodities');
 
-Route::get('/en-ng/trading/stocks', function () {
+Route::get('/trading/stocks', function () {
     return view('home.markets.shares');
-});
+})->name('markets.shares');
 
-Route::get('/en-ng/trading/options', function () {
+Route::get('/trading/options', function () {
     return view('home.markets.options');
-});
+})->name('markets.options');
 
-Route::get('/en-ng/trading/etfs', function () {
+Route::get('/trading/etfs', function () {
     return view('home.markets.etfs');
-});
+})->name('markets.etfs');
 
-Route::get('/en-ng/instruments', function () {
+Route::get('/instruments', function () {
     return view('home.markets.all-markets');
-});
+})->name('markets.all');
 
 // Trading Pages Routes
-Route::get('/en-ng/help/feescharges', function () {
+Route::get('/help/feescharges', function () {
     return view('home.trading.feescharges');
-});
+})->name('trading.feescharges');
 
-Route::get('/en-ng/trading/esg', function () {
+Route::get('/trading/esg', function () {
     return view('home.trading.esg');
-});
+})->name('trading.esg');
 
 // Company Pages Routes
-Route::get('/en-ng/aboutus', function () {
+Route::get('/aboutus', function () {
     return view('home.company.aboutus');
-});
+})->name('company.aboutus');
 
-Route::get('/en-ng/aboutus/reviews', function () {
+Route::get('/aboutus/reviews', function () {
     return view('home.company.reviews');
-});
+})->name('company.reviews');
 
-Route::get('/en-ng/promotions/bulls', function () {
+Route::get('/promotions/bulls', function () {
     return view('home.company.bulls');
-});
+})->name('company.bulls');
 
-Route::get('/en-ng/promotions/legiawarsaw', function () {
+Route::get('/promotions/legiawarsaw', function () {
     return view('home.company.legiawarsaw');
-});
+})->name('company.legiawarsaw');
 
-Route::get('/en-ng/promotions/youngboys', function () {
+Route::get('/promotions/youngboys', function () {
     return view('home.company.youngboys');
-});
+})->name('company.youngboys');
 
 // Learn Pages Routes
-Route::get('/en-ng/tradingacademy', function () {
+Route::get('/tradingacademy', function () {
     return view('home.learn.tradingacademy');
-});
+})->name('learn.tradingacademy');
 
-Route::get('/en-ng/glossary', function () {
+Route::get('/glossary', function () {
     return view('home.learn.glossary');
-});
+})->name('learn.glossary');
 
-Route::get('/en-ng/forecasts', function () {
+Route::get('/forecasts', function () {
     return view('home.learn.forecasts');
-});
+})->name('learn.forecasts');
 
-Route::get('/en-ng/demo-account', function () {
+Route::get('/demo-account', function () {
     return view('home.learn.demo-account');
-});
+})->name('learn.demoAccount');
 
-Route::get('/en-ng/insights', function () {
+Route::get('/insights', function () {
     return view('home.learn.insights');
-});
+})->name('learn.insights');
 
-Route::get('/en-ng/economiccalendar', function () {
+Route::get('/economiccalendar', function () {
     return view('home.learn.economiccalendar');
-});
+})->name('learn.economiccalendar');
 
-Route::get('/en-ng/tradingacademy/riskmanagement', function () {
+Route::get('/tradingacademy/riskmanagement', function () {
     return view('home.learn.riskmanagement');
-});
+})->name('learn.riskmanagement');
 
-Route::get('/en-ng/help/alerts', function () {
+Route::get('/help/alerts', function () {
     return view('home.learn.alerts');
-});
+})->name('learn.alerts');
 
 
 
 // Registration Routes
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('show.register');
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
-Route::post('/step2', [RegisterController::class, 'step2'])->name('user.step2');
-Route::post('/step3', [AuthController::class, 'step3'])->name('user.step3');
 
 
 
@@ -150,14 +148,16 @@ Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/logout', [App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('user.logout');
 
 
-Route::get('/step2', [AuthController::class, 'showpersonalDetailsForm'])->name('step2');
-Route::get('/step3', [AuthController::class, 'showVerifyForm'])->name('user.step3.form');
-Route::post('/resend-otp', [AuthController::class, 'resendOtp'])->name('user.resend.otp');
-
-
-Route::get('/update-details', [AuthController::class, 'showpersonalDetailsForm'])->name('update.details');
-Route::get('/verify', [AuthController::class, 'showVerifyForm'])->name('verify.form');
-Route::post('/verify', [AuthController::class, 'verifyCode'])->name('verify.code');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/step2', [AuthController::class, 'showpersonalDetailsForm'])->name('step2');
+    Route::post('/step2', [RegisterController::class, 'step2'])->name('user.step2');
+    Route::get('/step3', [AuthController::class, 'showVerifyForm'])->name('user.step3.form');
+    Route::post('/step3', [AuthController::class, 'step3'])->name('user.step3');
+    Route::post('/resend-otp', [AuthController::class, 'resendOtp'])->name('user.resend.otp');
+    Route::get('/update-details', [AuthController::class, 'showpersonalDetailsForm'])->name('update.details');
+    Route::get('/verify', [AuthController::class, 'showVerifyForm'])->name('verify.form');
+    Route::post('/verify', [AuthController::class, 'verifyCode'])->name('verify.code');
+});
 
 
 

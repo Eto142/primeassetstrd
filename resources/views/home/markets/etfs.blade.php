@@ -1,10 +1,9 @@
-@include('home.header')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+@php
+$pageTitle = 'ETFs Trading | Primeassetstrade';
+$pageHead = <<<'PAGEHEAD'
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETFs Trading | Primeassetstrade</title>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -33,8 +32,11 @@
         .btn-primary { background: #1652f0; border: none; }
         .btn-primary:hover { background: #f58634; }
     </style>
-</head>
-<body>
+PAGEHEAD;
+@endphp
+
+@include('home.header')
+
 <div class="market-hero">
     <div class="container">
         <h1>ETFs Trading</h1>
@@ -99,5 +101,3 @@
 </div>
 
 @include('home.footer')
-</body>
-</html>

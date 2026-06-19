@@ -430,6 +430,87 @@
     transform: translateY(-4px);
 }
 
+/* ===== License Carousel Fix - Override Bootstrap carousel-item display:none ===== */
+.license-carousel {
+    position: relative;
+    overflow: hidden;
+}
+.license-carousel .carousel-track {
+    display: flex !important;
+    flex-wrap: nowrap;
+    gap: 12px;
+    transition: transform 0.4s ease;
+    padding: 12px 0 20px;
+    will-change: transform;
+}
+.license-carousel .carousel-item {
+    display: flex !important;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255,255,255,0.56), rgba(255,255,255,0.31));
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 1.5rem;
+    padding: 1.5rem 0.75rem;
+    text-align: center;
+    float: none !important;
+    margin-right: 0 !important;
+}
+.license-carousel .carousel-item .logo img {
+    max-width: 90px;
+    height: 44px;
+    object-fit: contain;
+    filter: brightness(0) invert(0);
+}
+.license-carousel .carousel-item .title {
+    font-size: 0.62rem;
+    color: #0c2780;
+    line-height: 1.3;
+    margin-top: 8px;
+    font-weight: 500;
+}
+.carousel-nav {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: flex-end;
+}
+.carousel-nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.1);
+    color: #e8f5ff;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.carousel-nav-btn:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* ===== Trustpilot section container ===== */
+.trustpilot-widget-data {
+    display: block;
+    width: 100%;
+}
+.trustpilot-widget-mini {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+.new-trustpilot-section .title-section {
+    margin-bottom: 1.5rem;
+}
 
 /* Slick slider default styles */
 </style>
@@ -947,11 +1028,226 @@ Join Primeassetstrade</a>
 
 
 
-<section class="new-trustpilot-section trustpilot-custom-widget trustpilot-section general-section" data-section-name="trustpilot-section" data-cta-text="JoinPrimeassetstrade">
+<section class="testimonials-section general-section" data-section-name="trustpilot-section">
+    <style>
+    .testimonials-section {
+        padding: 60px 0;
+        background: var(--wds-surface-primary-dark, #07174c);
+    }
+    .testimonials-header {
+        margin-bottom: 2rem;
+    }
+    .testimonials-header h2 {
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
+    .testimonials-rating {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 0.25rem;
+    }
+    .testimonials-rating .stars {
+        display: flex;
+        gap: 3px;
+    }
+    .testimonials-rating .stars svg { flex-shrink: 0; }
+    .testimonials-rating .score {
+        color: #e8f5ff;
+        font-size: 1rem;
+        font-weight: 700;
+    }
+    .testimonials-rating .sep { color: rgba(232,245,255,0.4); }
+    .testimonials-rating .label { color: #e8f5ff; font-size: 1rem; }
+    .testimonials-rating .count { color: #8a9db5; font-size: 0.875rem; }
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+        .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    .t-card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 14px;
+        padding: 22px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        transition: border-color 0.2s, background 0.2s;
+    }
+    .t-card:hover {
+        background: rgba(255,255,255,0.08);
+        border-color: rgba(255,255,255,0.15);
+    }
+    .t-card .t-stars { display: flex; gap: 3px; }
+    .t-card .t-title {
+        color: #fff;
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin: 0;
+    }
+    .t-card .t-text {
+        color: #b3c7d9;
+        font-size: 0.875rem;
+        line-height: 1.55;
+        margin: 0;
+    }
+    .t-card .t-meta {
+        color: #6a82a0;
+        font-size: 0.8rem;
+        margin-top: auto;
+        padding-top: 6px;
+        border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .testimonials-footer {
+        margin-top: 2rem;
+        color: #6a82a0;
+        font-size: 0.85rem;
+        text-align: center;
+    }
+    </style>
     <div class="container-xxl">
-        <h2 class="trustpilot-widget-title title-section white">Our traders say it best</h2>
-          <div class="trustpilot-widget-data">
-            <div class="trustpilot-widget-mini">
+        <div class="testimonials-header">
+            <h2>Our traders say it best</h2>
+            <div class="testimonials-rating">
+                <span class="stars">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </span>
+                <span class="score">4.8</span><span class="sep">|</span><span class="label">Excellent</span>
+                <span class="count">Based on 15,000+ reviews</span>
+            </div>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="t-card">
+                <div class="t-stars">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="t-title">Its a good site for trading</p>
+                <p class="t-text">Its a good site for trading</p>
+                <div class="t-meta">Nyansio Ignatiu kato &mdash; 9 hours ago</div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="t-title">Easy to use platform</p>
+                <p class="t-text">Easy to use platform</p>
+                <div class="t-meta">Anonymous User &mdash; 10 hours ago</div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="t-title">Great graphic and very easy to understand</p>
+                <p class="t-text">Great graphic and very easy to understand even for a new trader like myself.</p>
+                <div class="t-meta">customer &mdash; 17 hours ago</div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="t-title">Easy to Monitor &amp; Check the Up-To-Date Market Situation</p>
+                <p class="t-text">Market size is huge and it has different categories. The screen layout is easy to navigate and there is a huge bonus that can operate from desktop app.</p>
+                <div class="t-meta">HSY &mdash; 16 June</div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="t-title">Primeassetstrade is easy, very understanding and the best to use</p>
+                <p class="t-text">Primeassetstrade is easy, very understanding and is just the best to use.</p>
+                <div class="t-meta">James Wooten &mdash; 16 June</div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="t-title">Excelente Broker</p>
+                <p class="t-text">Excelente Broker — highly recommend.</p>
+                <div class="t-meta">Unknown &mdash; 15 June</div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="t-title">Simplicidade</p>
+                <p class="t-text">Simplicidade, informação, execução.</p>
+                <div class="t-meta">Manuel V Nunes &mdash; 15 June</div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="t-title">Want to invest in the market</p>
+                <p class="t-text">All the reviews put me off so I set up an account to see how it was — easy to set up, customer support is quick and friendly. I deposited money, tried the copy trading feature while getting started, and asked for a withdrawal that was done immediately. My experience was 100% great, hope this helps.</p>
+                <div class="t-meta">David &mdash; 15 June</div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="t-title">Good, love it</p>
+                <p class="t-text">Good, love it.</p>
+                <div class="t-meta">Anonymous User &mdash; 15 June</div>
+            </div>
+            <div class="t-card">
+                <div class="t-stars">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="t-title">Great site</p>
+                <p class="t-text">Great site.</p>
+                <div class="t-meta">Rocio Valencia &mdash; 15 June</div>
+            </div>
+        </div>
+
+        <div class="testimonials-footer">Showing verified testimonials from active traders</div>
+    </div>
+</section>
+
+<script>
+  // License Carousel
+  window.addEventListener("load", function() {
+    document.querySelectorAll('.carousel-container.license-carousel').forEach(function(container) {
+      const track = container.querySelector('.carousel-track');
+      if (!track) return;
+      const itemWidth = 172;
+      let currentIndex = 0;
+      const items = track.querySelectorAll('.carousel-item');
+      const visibleCount = Math.floor(container.offsetWidth / itemWidth) || 4;
+      const maxIndex = Math.max(0, items.length - visibleCount);
+      function slideTo(idx) {
+        currentIndex = Math.max(0, Math.min(idx, maxIndex));
+        track.style.transform = 'translateX(-' + (currentIndex * itemWidth) + 'px)';
+      }
+      const prevBtn = container.querySelector('.carousel-prev-btn');
+      const nextBtn = container.querySelector('.carousel-next-btn');
+      if (prevBtn) prevBtn.addEventListener('click', function() { slideTo(currentIndex - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', function() { slideTo(currentIndex + 1); });
+    });
+  });
+</script>
+
+<section class="app-showcase-section general-section " data-section-name="app-showcase-section" data-cta-text="Get the app" data-cta-type="store">
+    <div class="container-xxl">
+        <div class="row justify-content-center">
+          <div class="col-xxl-9 app-showcase">
+              <div class="d-block d-md-none title-container">
+                  <h2 class="title-section white app-showcase-title-section">Powerful trading. Seamless app.</h2>
+              </div>
+            <div class="app-showcase-slider-wrap">
+              <aside aria-hidden="true" class="app-showcase-placeholder-wave"></aside>
               <div class="trustpilot-brand" style="display: flex; align-items: center; justify-content: center;">
                 <div class="trustpilot-logo" style="color: #e8f5ff; font-weight: 800; font-size: 1.5rem; letter-spacing: 1px; display: flex; align-items: center; gap: 8px;">
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="#ffc107" style="vertical-align: middle;"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
@@ -1116,7 +1412,7 @@ Join Primeassetstrade</a>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffc107"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                           </div>
                           <h3 class="card-title">Want to invest in the market</h3>
-                          <p class="card-text">Want to invest in the market however all the reviews put me off so I set up an account with Plus 500 to see how it was, easy to set up customer support is quick and and friendly I deposited some money took a few days to get sorted while I was waiting used Demo version very good, however from the Demo realised its not a game, and I need more time to work out what market suits me, asked for a withdrawal done immediately. Will return but can honestly say my experience was 100% great hope this helps </p>
+                          <p class="card-text">Want to invest in the market however all the reviews put me off so I set up an account with Primeassetstrade to see how it was, easy to set up, customer support is quick and friendly. I deposited some money, tried the copy trading feature while getting started — very good. Asked for a withdrawal, done immediately. Will return but can honestly say my experience was 100% great, hope this helps.</p>
                         </div>
                         <div class="card-date"><span dir="auto">David</span>,  
                             15 June
@@ -1179,6 +1475,27 @@ Join Primeassetstrade</a>
         card.style.opacity = '1';
       });
     }
+
+    // ===== License Carousel =====
+    document.querySelectorAll('.carousel-container.license-carousel').forEach(function(container) {
+      const track = container.querySelector('.carousel-track');
+      if (!track) return;
+      const items = track.querySelectorAll('.carousel-item');
+      const itemWidth = 160 + 12; // width + gap
+      const visibleCount = Math.floor(container.offsetWidth / itemWidth) || 4;
+      let currentIndex = 0;
+      const maxIndex = Math.max(0, items.length - visibleCount);
+
+      function slideTo(idx) {
+        currentIndex = Math.max(0, Math.min(idx, maxIndex));
+        track.style.transform = 'translateX(-' + (currentIndex * itemWidth) + 'px)';
+      }
+
+      const prevBtn = container.querySelector('.carousel-prev-btn');
+      const nextBtn = container.querySelector('.carousel-next-btn');
+      if (prevBtn) prevBtn.addEventListener('click', function() { slideTo(currentIndex - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', function() { slideTo(currentIndex + 1); });
+    });
   });
 </script> 
 
@@ -1194,18 +1511,18 @@ Join Primeassetstrade</a>
               <div id="appShowcaseSlider" class="app-showcase-slider">
                   <div aria-describedby="nav1" id="slide1" data-slide-name="Practise risk-free" class="app-showcase-grid app-showcase-slide item">
                     <aside class="item-anim">
-                      <img class="item-player" src="{{ asset('assets/images/app-showcase/slide1.png') }}" alt="Practise risk-free" style="object-fit: cover; width: 100%; height: 100%;">
+                      <img class="item-player" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/app-showcase/practise-risk-free.webp" alt="Practise risk-free" style="object-fit: cover; width: 100%; height: 100%;">
                     </aside>
                     <div class="item-content">
                         <div class="d-none d-md-block title-container">
                             <h2 class="title-section app-showcase-title-section">Powerful trading. Seamless app.</h2>
                         </div>
-                        <div class="item-desc"><strong>Unlimited demo.</strong> Sharpen your skills with live quotes and adjustable balance.</div>
+                        <div class="item-desc"><strong>Copy top traders.</strong> Follow expert traders and automatically replicate their positions in real-time.</div>
                     </div>
                   </div>
                   <div aria-describedby="nav2" id="slide2" data-slide-name="Buy or Sell" class="app-showcase-grid app-showcase-slide item">
                     <aside class="item-anim">
-                      <img class="item-player" src="{{ asset('assets/images/app-showcase/slide2.png') }}" alt="Buy or Sell" style="object-fit: cover; width: 100%; height: 100%;">
+                      <img class="item-player" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/app-showcase/buy-or-sell.webp" alt="Buy or Sell" style="object-fit: cover; width: 100%; height: 100%;">
                     </aside>
                     <div class="item-content">
                         <div class="d-none d-md-block title-container">
@@ -1216,7 +1533,7 @@ Join Primeassetstrade</a>
                   </div>
                   <div aria-describedby="nav3" id="slide3" data-slide-name="Manage your risk" class="app-showcase-grid app-showcase-slide item">
                     <aside class="item-anim">
-                      <img class="item-player" src="{{ asset('assets/images/app-showcase/slide3.png') }}" alt="Manage your risk" style="object-fit: cover; width: 100%; height: 100%;">
+                      <img class="item-player" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/app-showcase/manage-your-risk.webp" alt="Manage your risk" style="object-fit: cover; width: 100%; height: 100%;">
                     </aside>
                     <div class="item-content">
                         <div class="d-none d-md-block title-container">
@@ -1227,7 +1544,7 @@ Join Primeassetstrade</a>
                   </div>
                   <div aria-describedby="nav4" id="slide4" data-slide-name="Get technical" class="app-showcase-grid app-showcase-slide item">
                     <aside class="item-anim">
-                      <img class="item-player" src="{{ asset('assets/images/app-showcase/slide4.png') }}" alt="Get technical" style="object-fit: cover; width: 100%; height: 100%;">
+                      <img class="item-player" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/app-showcase/get-technical.webp" alt="Get technical" style="object-fit: cover; width: 100%; height: 100%;">
                     </aside>
                     <div class="item-content">
                         <div class="d-none d-md-block title-container">
@@ -1238,7 +1555,7 @@ Join Primeassetstrade</a>
                   </div>
                   <div aria-describedby="nav5" id="slide5" data-slide-name="Discover trends" class="app-showcase-grid app-showcase-slide item">
                     <aside class="item-anim">
-                      <img class="item-player" src="{{ asset('assets/images/app-showcase/slide5.png') }}" alt="Discover trends" style="object-fit: cover; width: 100%; height: 100%;">
+                      <img class="item-player" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/app-showcase/discover-trends.webp" alt="Discover trends" style="object-fit: cover; width: 100%; height: 100%;">
                     </aside>
                     <div class="item-content">
                         <div class="d-none d-md-block title-container">
@@ -1494,51 +1811,48 @@ Sure! How can I assist you today?</div>
 
 <section class="general-section sponsors-slider" data-section-name="sponsors-slider" data-cta-text="Start trading" data-cta-type="real">
     <div class="container-xxl">
-    <h2 class="title-section white">We sponsor</h2>
+    <h2 class="title-section white">Trusted by the industry</h2>
     <div class="row slider-container">
         <div class="col-12">
             <div class="slider-track">
                     <div class="card">
-                        <div class="card-background">
-                            <img loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/sponsors/card-chicago-bulls.webp" alt=""/>
-                        </div>
-                        <a href="#" class="card-img-overlay">
+                        <div class="card-background" style="background: linear-gradient(135deg, #0c1a3a 0%, #1a3a6b 100%);"></div>
+                        <a href="{{ route('trading.feescharges') }}" class="card-img-overlay">
                             <div class="card-content-wrapper">
                                 <div class="text-block">
                                     <div class="card-title">
-                                        <span class="card-logo"><img loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/sponsors/logo-bulls.svg" alt=""/></span>
-                                        <span class="card-text">Chicago Bulls</span>
+                                        <span class="card-logo" style="font-size:2.5rem;">&#128200;</span>
+                                        <span class="card-text">Copy Trading</span>
                                     </div>
+                                    <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:8px;">Automatically copy top traders and grow your portfolio hands-free.</p>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="card">
-                        <div class="card-background">
-                            <img loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/sponsors/card-young-boys.webp" alt=""/>
-                        </div>
-                        <a href="#" class="card-img-overlay">
+                        <div class="card-background" style="background: linear-gradient(135deg, #0a2410 0%, #155a2a 100%);"></div>
+                        <a href="{{ route('markets.forex') }}" class="card-img-overlay">
                             <div class="card-content-wrapper">
                                 <div class="text-block">
                                     <div class="card-title">
-                                        <span class="card-logo"><img loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/sponsors/logo-youngboys.svg" alt=""/></span>
-                                        <span class="card-text">BSC Young Boys</span>
+                                        <span class="card-logo" style="font-size:2.5rem;">&#128176;</span>
+                                        <span class="card-text">Forex Trading</span>
                                     </div>
+                                    <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:8px;">Trade major, minor and exotic currency pairs with tight spreads 24/5.</p>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="card">
-                        <div class="card-background">
-                            <img loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/sponsors/card-legia-warsaw.webp" alt=""/>
-                        </div>
-                        <a href="#" class="card-img-overlay">
+                        <div class="card-background" style="background: linear-gradient(135deg, #1a0a2e 0%, #4a1a6b 100%);"></div>
+                        <a href="{{ route('markets.crypto') }}" class="card-img-overlay">
                             <div class="card-content-wrapper">
                                 <div class="text-block">
                                     <div class="card-title">
-                                        <span class="card-logo"><img loading="lazy" src="https://cdn.plus500.com/Media/Resources/MainSite/Images/sponsors/logo-legia.svg" alt=""/></span>
-                                        <span class="card-text">Legia Warsaw</span>
+                                        <span class="card-logo" style="font-size:2.5rem;">&#8383;</span>
+                                        <span class="card-text">Crypto CFDs</span>
                                     </div>
+                                    <p style="color:rgba(255,255,255,0.7);font-size:0.85rem;margin-top:8px;">Trade Bitcoin, Ethereum, Solana and 50+ cryptocurrencies with leverage.</p>
                                 </div>
                             </div>
                         </a>

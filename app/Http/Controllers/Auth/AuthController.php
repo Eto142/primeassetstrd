@@ -83,7 +83,7 @@ class AuthController extends Controller
 
 public function showpersonalDetailsForm()
 {
-    return view('auth.update_details');
+    return view('auth.step2');
 }
 
 
@@ -113,26 +113,26 @@ public function showpersonalDetailsForm()
 
     // Step 3 POST: verify OTP
     public function step3(Request $request)
-{
-    $request->validate([
-        'otp_code' => 'required|digits:4',
-    ]);
+    {
+        $user = Auth::user();
+        if (!$user) {
+            return redirect()->route('login')->with('error', 'Please login first.');
+        }
 
-    $user = Auth::user();
-    if (!$user) {
-        return redirect()->route('login')->with('error', 'Please login first.');
+        $request->validate([
+            'otp_code' => 'required|digits:4',
+        ]);
+
+        if ((string) $request->otp_code === (string) $user->otp_code) {
+            $user->is_verified = 1;
+            $user->otp_code = null;
+            $user->save();
+
+            return redirect()->route('user.home')->with('success', 'Your account has been verified!');
+        }
+
+        return back()->with('error', 'Invalid OTP. Please try again.');
     }
-
-    if ($request->otp_code == $user->otp_code) {
-        $user->is_verified = 1;
-        $user->otp_code = null; // Clear OTP
-        $user->save();
-
-        return redirect()->route('user.home')->with('success', 'Your account has been verified!');
-    }
-
-    return back()->with('error', 'Failed to verify OTP. Please try again.');
-}
 
 
 
@@ -144,19 +144,15 @@ public function resendOtp(Request $request)
         return redirect()->route('login')->with('error', 'Please login first.');
     }
 
-    // Generate new 4-digit OTP
-    $otp = rand(1000, 9999);
+    // Generate new cryptographically secure 4-digit OTP
+    $otp = random_int(1000, 9999);
 
     // Save OTP to user in DB
     $user->otp_code = $otp;
     $user->save();
 
-    // Send OTP via email (or SMS)
-    // Mail::to($user->email)->send(new OtpMail($otp));
-    // OR your preferred method
-
-       // Send OTP email
-        Mail::to($user->email)->send(new OtpMail($user, $otp));
+    // Send OTP email
+    Mail::to($user->email)->send(new OtpMail($user, $otp));
 
     return back()->with('success', 'A new OTP has been sent to your email.');
 }
